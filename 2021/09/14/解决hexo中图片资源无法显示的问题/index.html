@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Medicine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="解决hexo中图片资源无法显示的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决hexo中图片资源无法显示的问题">
+<meta property="og:url" content="https://mdcn.xyz/2021/09/14/%E8%A7%A3%E5%86%B3hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="mdcn">
+<meta property="og:description" content="解决hexo中图片资源无法显示的问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mdcn.xyz/pics/image-20210913215821170.png">
+<meta property="og:image" content="https://mdcn.xyz/pics/Typora%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%B5%8B%E8%AF%95/image-20210913215821170.png">
+<meta property="og:image" content="https://mdcn.xyz/2021/09/14/%E8%A7%A3%E5%86%B3hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20210913215821170.png">
+<meta property="og:image" content="https://mdcn.xyz/2021/09/14/%E8%A7%A3%E5%86%B3hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/F7lHB3AVG8i6Z42.png">
+<meta property="article:published_time" content="2021-09-14T01:30:20.000Z">
+<meta property="article:modified_time" content="2022-01-21T07:17:42.856Z">
+<meta property="article:author" content="Medicine">
+<meta property="article:tag" content="BUG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mdcn.xyz/pics/image-20210913215821170.png">
+  
+  
+  <title>解决hexo中图片资源无法显示的问题 - mdcn</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"mdcn.xyz","root":"/","version":"1.8.14","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>mdcn</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="解决hexo中图片资源无法显示的问题">
+              
+                解决hexo中图片资源无法显示的问题
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-14 09:30" pubdate>
+        2021年9月14日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">解决hexo中图片资源无法显示的问题</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年1月21日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>解决hexo中图片资源无法显示的问题</p>
+<span id="more"></span>
+
+
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>晚上在打算更新博客的时候发现网站图片资源无法加载出来，在网上找了几天解决方法也不能很好的解决这个问题，但是网上的贴子也给我提供了一定的解决思路，也借此总结了以下hexo博客插入图片的方法</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>大概的思路：把所有有关的软件版本全部更新到最新版本。<br>所包括的软件有：vscode, hexo, blog插件</p>
+<h3 id="更新vscode"><a href="#更新vscode" class="headerlink" title="更新vscode"></a>更新vscode</h3><p>在设置中自动更新到官方最新版本（当前使用版本1.60.0）</p>
+<h3 id="更新hexo"><a href="#更新hexo" class="headerlink" title="更新hexo"></a>更新hexo</h3><p>更新使用淘宝的镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">npm install -g cnpm --registry=https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+
+<p>建立软连接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /usr/bin<br>ln -s /usr/local/node/bin/cnpm cnpm<br></code></pre></td></tr></table></figure>
+
+<p>更新hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cnpm install -g cnpm	# 升级npm<br>cnpm cache clean -f		# 清除缓存<br></code></pre></td></tr></table></figure>
+
+<p>更新插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">cnpm install -g npm-check	# 检查有哪些可升级的插件<br>cnpm install -g npm-upgrade	# 升级系统中的插件<br><br>cnpm update	# 更新hexo及所有插件<br>hexo -v		# 检查hexo版本确认已更新<br></code></pre></td></tr></table></figure>
+
+<p><strong>接下来图片就可以正常显示了（至少我的博客是这样的），接下来再总结一下hexo插入图片的方法：</strong></p>
+<h3 id="方法一：绝对引用"><a href="#方法一：绝对引用" class="headerlink" title="方法一：绝对引用"></a>方法一：绝对引用</h3><p>将图片资源保存在 /pics 文件下（文件名是自定义的），通过绝对地址来插入图片<br>注意：根目录 /pics 是在 /source 文件夹目录之下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs txt">![image-20210913215821170](/pics/image-20210913215821170.png)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pics/image-20210913215821170.png" srcset="/img/loading.gif" lazyload alt="image-20210913215821170"></p>
+<p>经验证 pics 文件下的文件夹中的图片也支持绝对引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs txt">![image-20210913215821170](/pics/Typora图片资源测试/image-20210913215821170.png)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pics/Typora%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%B5%8B%E8%AF%95/image-20210913215821170.png" srcset="/img/loading.gif" lazyload alt="image-20210913215821170"></p>
+<h3 id="方法二：相对引用"><a href="#方法二：相对引用" class="headerlink" title="方法二：相对引用"></a>方法二：相对引用</h3><p>更新站点配置文件 _config.yml 下的配置命令，可以在每次新建文章的时候就会建立同名文件夹，在使用Typora编写文章时将图片放入同名文件夹即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">post_asset_folder: true	# 改为true<br></code></pre></td></tr></table></figure>
+
+<p>之后，直接调用命令可直接访问图片资源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs txt">![image-20210913215821170](image-20210913215821170.png)<br></code></pre></td></tr></table></figure>
+
+<p><img src="image-20210913215821170.png" srcset="/img/loading.gif" lazyload alt="image-20210913215821170"></p>
+<p>但是值得注意的是：同样的目录结构在Typora和hexo中引用的路径不一样，所以需要每次上传的时候手动更改图片资源的引用路径，这个目前还没有找到特别有效的解决方法，除非使用在线图床</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Typora</span><br>![image-20210913215821170](Typora图片资源测试/image-20210913215821170.png)<br><span class="hljs-meta">#</span><span class="bash"> hexo</span><br>![image-20210913215821170](image-20210913215821170.png)<br></code></pre></td></tr></table></figure>
+
+<h3 id="方法三：在线图床"><a href="#方法三：在线图床" class="headerlink" title="方法三：在线图床"></a>方法三：在线图床</h3><p>个人推荐一个比较好用的图床 <a target="_blank" rel="noopener" href="https://sm.ms/">sm.ms</a> ，点击上传之后直接赋值连接粘贴过来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">![image-20210913215821170.png](https://i.loli.net/2021/09/14/F7lHB3AVG8i6Z42.png)<br></code></pre></td></tr></table></figure>
+
+<img src="%E8%A7%A3%E5%86%B3hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/F7lHB3AVG8i6Z42.png" srcset="/img/loading.gif" lazyload alt="image-20210913215821170.png"  />
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/BUG/">BUG</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">观察者模式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
