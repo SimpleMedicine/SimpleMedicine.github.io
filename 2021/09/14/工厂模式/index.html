@@ -16,25 +16,26 @@
   <meta name="author" content="Medicine">
   <meta name="keywords" content="">
   
-    <meta name="description" content="工厂模式简单工厂在创建一个对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。它被所有需要进行实例化的客户类调用。  代码实现： 123456&#x2F;** * 目标接口 *&#x2F;public interface Product &amp;#123;    void doSome();&amp;#125;  123456789&#x2F;** * 目标接口实现类 *&#x2F;public class ConcreteProduct im">
+    <meta name="description" content="工厂模式提供接口批量生产对象示例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mdcn">
-<meta property="og:url" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="https://mdcn.xyz/2021/09/14/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="mdcn">
-<meta property="og:description" content="工厂模式简单工厂在创建一个对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。它被所有需要进行实例化的客户类调用。  代码实现： 123456&#x2F;** * 目标接口 *&#x2F;public interface Product &amp;#123;    void doSome();&amp;#125;  123456789&#x2F;** * 目标接口实现类 *&#x2F;public class ConcreteProduct im">
+<meta property="og:description" content="工厂模式提供接口批量生产对象示例">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/simple_factory.png">
-<meta property="og:image" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/factory_method.png">
-<meta property="og:image" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/factory_method_2.jpg">
-<meta property="og:image" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/abstract_factory.png">
-<meta property="article:published_time" content="2022-01-21T07:21:21.002Z">
-<meta property="article:modified_time" content="2021-09-14T05:16:25.427Z">
+<meta property="og:image" content="https://s2.loli.net/2022/01/21/4EUznPsjrdL5WR6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/01/21/AZSRh8euTOfbNUI.png">
+<meta property="og:image" content="https://s2.loli.net/2022/01/21/X8rM4bHfkYwuZSt.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/01/21/Z7TOhopXdQ5Yi4g.png">
+<meta property="article:published_time" content="2021-09-14T02:41:15.000Z">
+<meta property="article:modified_time" content="2022-01-21T08:17:11.087Z">
 <meta property="article:author" content="Medicine">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mdcn.xyz/2022/01/21/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/simple_factory.png">
+<meta name="twitter:image" content="https://s2.loli.net/2022/01/21/4EUznPsjrdL5WR6.png">
   
   
-  <title>mdcn</title>
+  <title>工厂模式 - mdcn</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,9 +181,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="工厂模式">
               
-                
+                工厂模式
               
             </span>
 
@@ -192,8 +193,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-21 15:21" pubdate>
-        2022年1月21日 下午
+      <time datetime="2021-09-14 10:41" pubdate>
+        2021年9月14日 上午
       </time>
     </span>
   
@@ -242,17 +243,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">工厂模式</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月14日 下午
+                  本文最后更新于：2022年1月21日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>在创建一个对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。<br>它被所有需要进行实例化的客户类调用。</p>
-<p><img src="simple_factory.png" srcset="/img/loading.gif" lazyload alt="simple_factory"></p>
+              <p>工厂模式提供接口批量生产对象示例</p>
+<span id="more"></span>
+
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>在创建一个对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。<br>它被所有需要进行实例化的客户类调用。</p>
+<p><img src="https://s2.loli.net/2022/01/21/4EUznPsjrdL5WR6.png" srcset="/img/loading.gif" lazyload alt="simple_factory.png"></p>
 <p>代码实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标接口</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Product</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSome</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -263,8 +267,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 调用简单工厂创建实例</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        SimpleFactory simpleFactory = <span class="hljs-keyword">new</span> SimpleFactory();<br>        Product product = simpleFactory.createProduct();<br>        product.doSome();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2><p>定义了一个创建对象的抽象类, 由抽象类的子类决定要实例化哪个类<br>也可以这么理解: 工厂方法把实例化操作推迟到子类</p>
-<p><img src="factory_method.png" srcset="/img/loading.gif" lazyload alt="factory_method"></p>
-<p>工厂方法是简单工厂的延迟实现，即将超级工厂(简单工厂)拆分为多个工厂<br><img src="factory_method_2.jpg" srcset="/img/loading.gif" lazyload alt="factory_method_2"></p>
+<p><img src="https://s2.loli.net/2022/01/21/AZSRh8euTOfbNUI.png" srcset="/img/loading.gif" lazyload alt="factory_method.png"></p>
+<p>工厂方法是简单工厂的延迟实现，即将超级工厂(简单工厂)拆分为多个工厂<br><img src="https://s2.loli.net/2022/01/21/X8rM4bHfkYwuZSt.jpg" srcset="/img/loading.gif" lazyload alt="factory_method_2.jpg"></p>
 <p>代码实现:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Product</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -286,7 +290,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs txt">ConcreteProduct::f()<br>ConcreteProduct1::f()<br>ConcreteProduct2::f()<br></code></pre></td></tr></table></figure>
 
 <h2 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h2><p>提供一个抽象工厂接口，创建一个产品家族，也就是很多对象，并且这些对象是相关的，必须要一起创建出来。而工厂方法模式只是用于多个工程创建一种对象</p>
-<p><img src="abstract_factory.png" srcset="/img/loading.gif" lazyload alt="abstract_factory"></p>
+<p><img src="https://s2.loli.net/2022/01/21/Z7TOhopXdQ5Yi4g.png" srcset="/img/loading.gif" lazyload alt="abstract_factory.png"></p>
 <p>抽象工厂也实现了将创建对象的方法延迟到子类实现，例如上图中的AbstractFactory创建Product的方法都由ConcreteFactory1和ConcreteFactory2来实现</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 抽象工厂类</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractFactory</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> AbstractProductA <span class="hljs-title">createProductA</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">abstract</span> AbstractProductB <span class="hljs-title">createProductB</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -320,6 +324,20 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                    
+                  </div>
                 
               </div>
               
@@ -334,12 +352,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/09/16/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">单例模式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/21/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2021/09/14/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                        <span class="hidden-mobile">装饰者模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
